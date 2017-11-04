@@ -8,9 +8,6 @@
 
 <img src="screenshots/jd.gif" width="330"  hspace="20">
 
-## 关于我
-个人博客   http://will-ls.top/
-
 
 ## 声明
 本项目使用 Api 来自凤凰新闻，煎蛋，此开源项目仅做学习交流使用, 不可用于任何商业用途，如果你觉得不错, 对你有帮助, 欢迎点个 star 谢谢
