@@ -27,16 +27,11 @@
                 />
 
 
-            <com.will.weiyue.widget.SimpleMultiStateView
-                android:id="@+id/SimpleMultiStateView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
                 <LinearLayout
                     android:id="@+id/ll_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
                     android:background="#ffffff"
                     android:orientation="vertical"
                     >
@@ -115,7 +110,6 @@
                     </RelativeLayout>
 
                 </LinearLayout>
-            </com.will.weiyue.widget.SimpleMultiStateView>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

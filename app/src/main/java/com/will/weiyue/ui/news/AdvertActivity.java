@@ -2,6 +2,7 @@ package com.will.weiyue.ui.news;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -51,6 +52,7 @@ public class AdvertActivity extends BaseActivity {
 
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
+        setStatusBarColor(Color.parseColor("#BDBDBD"),30);
         getSetting(mWebviewAdvert);
         mWebviewAdvert.setWebViewClient(new WebViewClient() {
             @Override

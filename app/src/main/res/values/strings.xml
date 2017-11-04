@@ -1,19 +1,15 @@
 <resources>
     <string name="app_name">微阅</string>
 
-    <string name="loading">加载中...</string>
-
     <!-- 状态视图  -->
+    <string name="loading">加载中...</string>
     <string name="text_empty">还没有数据呢！</string>
     <string name="text_nonet">网络异常！</string>
     <string name="text_retry">点击重试</string>
     <string name="title_activity_main2">Main2Activity</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
-
 
     <!-- 新闻 -->
     <string name="news_commentsize">%1$s评论</string>
@@ -36,11 +32,8 @@
         <item>台湾</item>
         <item>汽车</item>
         <item>社会</item>
-        <item>FUN来了</item>
         <item>时尚</item>
         <item>国学</item>
-        <item>时政</item>
-        <item>凤凰大学问</item>
         <item>文化</item>
         <item>星座</item>
         <item>读书</item>
@@ -60,11 +53,8 @@
         <item>TW73</item>
         <item>QC45,FOCUSQC45</item>
         <item>SH133,FOCUSSH133</item>
-        <item>DZPD</item>
         <item>SS78,FOCUSSS78</item>
         <item>GXPD,FOCUSGXPD</item>
-        <item>SZPD,FOCUSSZPD</item>
-        <item>FHDXW,FOCUSFHDXW</item>
         <item>WH25,FOCUSWH25</item>
         <item>XZ09,FOCUSXZ09</item>
         <item>DS57,FOCUSDS57</item>

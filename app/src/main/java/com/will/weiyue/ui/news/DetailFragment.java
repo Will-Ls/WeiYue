@@ -53,7 +53,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  * author: Will .
  * date: 2017/9/8 .
  */
-public class DetailFragment extends BaseFragment<DetailPresenter> implements DetailContract.View {
+public class  DetailFragment extends BaseFragment<DetailPresenter> implements DetailContract.View {
     private static final String TAG = "JdDetailFragment";
 
     @BindView(R.id.mRecyclerView)
@@ -239,7 +239,9 @@ public class DetailFragment extends BaseFragment<DetailPresenter> implements Det
             mBanner.setImages(mUrlList);
             mBanner.setBannerTitles(mTitleList);
             mBanner.start();
-            detailAdapter.addHeaderView(view_Focus);
+            if (detailAdapter.getHeaderLayoutCount()<1){
+                detailAdapter.addHeaderView(view_Focus);
+            }
         }
     }
 

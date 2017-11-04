@@ -1,8 +1,8 @@
 package com.will.weiyue.ui.news;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -81,13 +81,11 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
         setWebViewSetting();
-        setStatusBarColor(ContextCompat.getColor(this, android.R.color.darker_gray));
-
+        setStatusBarColor(Color.parseColor("#BDBDBD"),30);
         mScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
 
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                Log.i(TAG, "onScrollChange: scrollY=" + scrollY + "  oldScrollY=" + oldScrollY + "getHeight=" + mConstraintLayout.getHeight());
                 if (scrollY > mConstraintLayout.getHeight()) {
                     mRlTop.setVisibility(View.VISIBLE);
                 } else {
@@ -121,7 +119,6 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                if (getIntent().getExtras() == null) showFaild();
                 String aid = getIntent().getStringExtra("aid");
                 mPresenter.getData(aid);
             }
@@ -135,7 +132,6 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
 
     @Override
     public void onRetry() {
-        if (getIntent().getExtras() == null) showFaild();
         String aid = getIntent().getStringExtra("aid");
         mPresenter.getData(aid);
     }
@@ -178,7 +174,6 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
                 mWebView.loadUrl(url);
             }
         });
-        showSuccess();
     }
 
 
