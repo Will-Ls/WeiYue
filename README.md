@@ -7,7 +7,6 @@
 
 ## 截图
 
-<img src="screenshots/news.gif" width="330"  hspace="20">
+<img src="screenshots/jd.gif" width="330" align="right" hspace="20">
+<img src="screenshots/news.png" width="30%" />
 
-
-<img src="screenshots/jd.gif" width="330"  hspace="20">
