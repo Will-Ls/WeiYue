@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#64B6D1</color>
+    <color name="colorPrimaryDark">#F68E54</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="windowBackground">@android:color/white</color>
+
+    <color name="tab_unselect">#a3a3a3</color>
+    <color name="news_tv_source_color">#a3a3a3</color>
+</resources>

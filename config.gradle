@@ -1,0 +1,78 @@
+
+ext {
+
+    android = [
+            compileSdkVersion      : 25,
+            buildToolsVersion      : "25.0.2",
+            applicationId          : "com.will.weiyue",
+            minSdkVersion          : 19,
+            targetSdkVersion       : 25,
+            versionCode            : 1,
+            versionName            : "1.0"
+    ]
+
+    dependVersion = [
+            support: "25.3.1"
+    ]
+
+    dependencies = [
+            //android-support
+            "support-v4"            : "com.android.support:support-v4:${dependVersion.support}",
+            "appcompat-v7"          : "com.android.support:appcompat-v7:${dependVersion.support}",
+            "design"                : "com.android.support:design:${dependVersion.support}",
+            "recyclerview"          : "com.android.support:recyclerview-v7:${dependVersion.support}",
+            "cardview"              : "com.android.support:cardview-v7:${dependVersion.support}",
+
+            //http
+            "retrofit2"             : "com.squareup.retrofit2:retrofit:2.1.0",
+            "converter-scalars"     : "com.squareup.retrofit2:converter-scalars:2.1.0",
+            "converter-gson"        : "com.squareup.retrofit2:converter-gson:2.1.0",
+            "adapter-rxjava2"       : "com.squareup.retrofit2:adapter-rxjava2:2.2.0",
+
+            //httpcache
+            "rxCache"               : "com.github.VictorAlbertos.RxCache:runtime:1.8.0-2.x",
+            "Jolyglot-gson"         : "com.github.VictorAlbertos.Jolyglot:gson:0.0.3",
+
+            //rxjava
+            "rxjava"                : "io.reactivex.rxjava2:rxjava:2.0.6",
+            "rxandroid"             : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "rxbinding2"            : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+            rxlifecycle2            : "com.trello.rxlifecycle2:rxlifecycle:2.1.0",
+            rxlifecomponents        : "com.trello.rxlifecycle2:rxlifecycle-components:2.1.0",
+
+            //dagger2
+            "dagger"                : "com.google.dagger:dagger:2.7",
+            "dagger-compiler"       : "com.google.dagger:dagger-compiler:2.7",
+
+            //ui
+            "constraint-layout"     : "com.android.support.constraint:constraint-layout:1.0.2",
+            "fragmentation"         : "me.yokeyword:fragmentation:1.0.0",
+            "butterknife"           : "com.jakewharton:butterknife:8.8.1",
+            "butterknife-compiler"  : "com.jakewharton:butterknife-compiler:8.8.1",
+            "ultra-ptr"             : "in.srain.cube:ultra-ptr:1.0.11",
+            "bottom-bar"            : "com.roughike:bottom-bar:2.3.1",
+            "BaseAdapterHelper"     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.24",
+            "glide"                 : "com.github.bumptech.glide:glide:4.0.0-RC1",
+            "banner"                : "com.youth.banner:banner:1.4.9",
+            "viewanimator"          : "com.github.florent37:viewanimator:1.0.5",
+            "tablayout"             : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "FlycoDialog"           : "com.flyco.dialog:FlycoDialog_Lib:1.3.2@aar",
+            "richtext"              : "com.zzhoujay.richtext:richtext:2.5.2",
+            "transformations"       : "jp.wasabeef:glide-transformations:2.0.2",
+            "PhotoView"             : "com.github.chrisbanes:PhotoView:2.1.2",
+            "videoplayer"           : "fm.jiecao:jiecaovideoplayer:5.7",
+            "lottie"                : "com.airbnb.android:lottie:2.1.0",
+            "progressbar"           : "me.zhanghai.android.materialprogressbar:library:1.4.1",
+            "transitionhelper"      : "me.immortalz:transitionhelper:1.0.6",
+            "swipebacklayout"       : "cn.bingoogolapple:bga-swipebacklayout:1.1.0@aar",
+            "gif-drawable"          : "pl.droidsonroids.gif:android-gif-drawable:1.2.8",
+
+            //Event
+            "androideventbus"       : "org.simple:androideventbus:1.0.5.1",
+
+            //db
+            "litepal"               : "org.litepal.android:core:1.5.1",
+            "retrolambda"           : "me.tatarka:gradle-retrolambda:3.7.0",
+
+    ]
+}

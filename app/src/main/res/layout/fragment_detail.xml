@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/mPtrFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <com.will.weiyue.widget.SimpleMultiStateView
+            android:id="@+id/SimpleMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:scrollbars="vertical"
+                />
+
+        </com.will.weiyue.widget.SimpleMultiStateView>
+
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_top_toast"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#D6E9F6"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/news_toast"
+            android:textColor="#3393D5"
+            android:textSize="12sp"
+            />
+    </RelativeLayout>
+
+</FrameLayout>

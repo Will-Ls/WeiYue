@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+    <android.support.design.widget.TabLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@android:color/black"
+        android:layout_toLeftOf="@+id/iv_edit"
+        android:layout_alignParentLeft="true"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="0dp"
+        app:tabBackground="@android:color/white"
+        app:tabPadding="5dp"
+        />
+
+        <ImageButton
+            android:id="@id/iv_edit"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_news_add"
+            android:background="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

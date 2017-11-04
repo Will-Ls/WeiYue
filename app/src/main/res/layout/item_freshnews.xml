@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="95dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:background="#E8E8E8"
+            android:transitionName="topview"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="16.0dip"
+            android:layout_toLeftOf="@id/iv_logo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/primary_text_default_material_light"
+            android:textSize="16.0sp"/>
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text_default_material_light"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_commnetsize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tv_title"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/tv_title"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text_default_material_light"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#ffd9d9d9"/>
+
+</LinearLayout>

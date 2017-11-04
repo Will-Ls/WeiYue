@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="weiyuedb">
+    </dbname>
+    <version value="2">
+    </version>
+    <list>
+        <mapping class="com.will.weiyue.bean.Channel">
+        </mapping>
+    </list>
+
+</litepal>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <View
+        android:id="@+id/fake_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/statusbar_view_height"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <com.flyco.tablayout.SlidingTabLayout
+            xmlns:tl="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/SlidingTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/iv_edit"
+            android:background="@color/colorPrimary"
+            tl:tl_indicator_color="@android:color/white"
+            tl:tl_textSelectColor="@android:color/white"
+            tl:tl_textsize="14sp"/>
+
+        <ImageButton
+            android:id="@id/iv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            android:src="@drawable/ic_news_add"/>
+    </RelativeLayout>
+
+    <com.will.weiyue.widget.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

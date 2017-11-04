@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, user-scalable=no">
+<title>凤凰新闻</title>
+<script type="text/javascript" src="detail_goods.js"></script>
+<link rel="stylesheet" type="text/css" href="detail_goods.css" />
+<script type="text/javascript" src="ImageCropper.js"></script>
+<script type="text/javascript" src="detail.js"></script>
+<link rel="stylesheet" type="text/css" href="detail.css" />
+</head>
+<body>
+
+	<div class="top-banner" id="top-banner"></div>
+	<div id="ifeng-article" class="article">
+		<div class="title" id="title"></div>
+
+		<div class="time-and-source-panel" id="time-and-source-panel">
+			<div class="cir" id="cir">
+				<img class="source_icon" id="source_icon" alt="">
+			</div>
+			<div class="sub_info">
+				<div class="source" id="source"></div>
+				<div class="verticalline" id="verticalline"></div>
+				<div class="catesource" id="catesource"></div>
+				<div class="time" id="time"></div>
+			</div>
+			<img class="subscribe" id="subscribe" alt="">
+		</div>
+		<div class="content" id="content"></div>
+			
+	</div>
+
+	<div class="insert-news" id="insert-news">
+			<div class="news-left"><img src="top_img.png" style="width:20px;height:19px;"></div>
+			<div class="news-middle">&nbsp;</div>
+			<div class="news-right">
+				<div class="news-channelName" id="news-channelName"></div>
+				<div class="news-title" id="news-title"></div>
+				<div class="news-time-source" id="news-time-source">
+					<span class="news-time" id="news-time"></span>&nbsp;&nbsp;<span class="news-source" id="news-source"></span>
+				</div>
+				<div class="news-content" id="news-content"></div>
+			</div>
+	</div>
+	
+	<div class="editor" id="editor"></div>
+
+	<div id="disclamer_wrapper" class="disclamer_wrapper">
+		<div id="disclaimer" class="disclaimer"></div>
+		<div class="button" id="originBtn"></div>
+	</div>
+	
+	<div id="label_wrapper" class="label_wrapper">
+		 <div id="tag-content-label" class="tag-content-label">标签:</div>
+		 <div id="items-content-label" class="items-content-label"></div>
+	</div>
+
+	<!--<div class="sub-wrapper" id="sub-wrapper">-->
+		<!--<div id="subscription-item" class="subscription-item"><div id="subscription-icon" class="subscription-icon"></div><div id="subscription-shade" class="subscription-shade"></div>-->
+		<!--<img id="subscription-button" class="subscription-button" src="sub_add.png"/><div id="subscription_title" class="subscription_title">壹读</div><div id="subscription_content" class="subscription_content">请幽默 有情趣</div></div>-->
+	<!--</div>-->
+
+	<div style="text-align:center;padding-bottom:28px;border:none;display:none" id="survey_ad_wrapper">
+		<img style="margin-left:auto;margin-right:auto;border:none;display:none" id="survey_ad_img">
+	</div>
+
+	<div style="margin-right:auto;margin-left:auto;margin-bottom:28px;border:#e5e5e5 solid 1px;clear:both;display:none" id="body_ad_wrapper">
+		<div style="margin-right:auto;margin-left:auto;text-align:center;background-size:contain;" id="body_ad_img" ></div>
+		<div style="padding:10px">
+			<div style="color:#1a1a1a;text-align:center;font-size:14px;float:left;overflow:hidden" id="body_ad_title"></div>
+			<div style="float:right;text-align:center">
+				<!-- <font style="color:#cccccc;font-size:10px;padding:2px 1px 1px 1px;border:#cccccc solid 1px;border-radius:2px">广告</font>  -->
+				<div class="thinner-border">&nbsp;广告&nbsp;</div>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+	<div  style="text-align:center;display:none;padding-bottom:30px;" id="support_accusation">
+		<div id="detail_support_container" style="display:inline-block;height:40px;width:120px;padding-top:9px;text-align:center;border:1px solid #ededed;border-radius:45px;" >
+			<img id="detail_support" src="detail_support_unclick.png" style="text-align:center;margin-right:10px;width:20px;height:20px;margin-bottom:10px;"  align="middle">
+			<p id="detail_support_value" class="support_accusation" style="display:inline;">10000</p>
+		</div>
+		<div id="detail_accusation_container" class="accusation" style="display:inline-block;height:40px;width:120px;padding-top:9px;margin-left:30px;text-align:center;border:1px solid #ededed;border-radius:45px;">
+			<img id="detail_accusation" src="detail_accusation.png" style="text-align:center;margin-right:10px;width:20px;height:20px;margin-bottom:10px;"  align="middle">
+			<p class="support_accusation" style="display:inline;">投诉</p>
+		</div>
+	</div>
+	<div style="text-align:center;padding-bottom:43px;display:none;" id="content-share">
+		<img src="weichat.png" width="58px" height="17px" id="weichat-share">
+		<img src="friend.png" width="58px" height="17px" style="margin-left:30px;margin-right:30px;" id="friend-share">
+		<img src="blot.png" width="58px" height="17px" id="blot-share" >
+	</div>
+	
+	<div class="split" id="split" style="display:none">民调 </div>
+	<div class="vote" id="vote" style="display:none">
+		<div class="vote-title" id="vote-title"></div>
+		<span class="vote-discription" id="vote-discription"></span>
+		<div class="vote-share" id="vote-share"></div>
+	</div>
+
+	
+	<div class="relative-news-panel" id="relativeNewsPanel">
+		<div class="news-title-normal">
+			<div id="news-title-left-img"><img src="pre_title_block.png" style="padding-top:2px"></div>
+			<div id="news-title-content"><span>相关新闻</span></div>
+			<div id="news-title-line" class="relative-news-panel-img" style="padding-top:2px">&nbsp;</div>
+		</div>
+		<div style="clear:both;"></div>
+		<ul class="news-list" id="news-list"></ul>
+	</div>
+	
+	<div class="recommend-doc-title" id="relativeReadPanel">
+		<div class="news-title-normal">
+			<div id="relate-title-left-img-read"><img src="pre_title_block.png" style="padding-top:2px"></div>
+			<div id="relate-title-content-read"><span >相关阅读</span></div>
+			<div id="relate-title-line-read" class="relative-news-panel-img" style="padding-top:2px">&nbsp;</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<div class="recommend-doc" id="relate-doc">	
+	</div>
+	
+	
+	<div class="comment" id="comment">
+		<div class="comment-title">热门跟帖</div>
+		<ul class="comment-list" id="comment_list"></ul>
+		<div class="comment-more" id="comment_more_btn">
+			<span class="comment-more-text">查看更多</span>
+		</div>
+	</div>
+	
+	<div class="recommend-doc-title" id="recommend-doc-title">
+		<div class="news-title-normal">
+			<div id="news-title-left-img-recommend"><img src="pre_title_block.png" style="padding-top:2px"></div>
+			<div id="news-title-content-recommend"><span >精彩推荐</span></div>
+			<div id="news-title-line-recommend" class="relative-news-panel-img" style="padding-top:2px">&nbsp;</div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	<div class="recommend-doc" id="recommend-doc">
+	</div>
+	
+	<div class="recommend-doc-title" id="content-like-title"> 
+		<div class="news-title-normal">
+			<div id="news-title-left-img-like"><img src="pre_title_block.png" style="padding-top:2px"></div>
+			<div id="news-title-content-like"><span >精彩图集</span></div>
+			<div class="content-like-parent" style="position:relative;"><div id="news-title-line-like" class="relative-news-panel-img-like"><div class="content-like-line"></div></div></div>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+	
+	<div class="content-like" id="content-like">
+			<div class="like-item-0" id="like-item-0"></div>
+			<div class="like-item-1" id="like-item-1"></div>
+	</div>
+	<div style="clear:both;"></div>
+	<div class="ad-photo-parent">
+		<div class="adv2" id="adv2"></div>
+	</div>
+	<div class="adv-wrapper" id="adv_wrapper">
+		
+		<div class="adv" id="adv01">
+			<div class="icon_wrapper">
+				<div class="icon" id="ad_spread_1">广告</div>
+			</div>
+			
+			<div class="message"><span class="prefix"></span> <span class="item" id="advItem01">&nbsp;</span></div>
+			
+		</div>
+		<!-- 考虑到CSS中分割线的问题，这里使用心得class -->
+		<div class="adv" id="adv02">
+			<div class="icon_wrapper">
+				<div class="icon" id="ad_spread_2">广告</div>
+			</div>
+			
+			<div class="message"><span class="prefix"></span> <span class="item" id="advItem02">&nbsp;</span></div>		
+		</div>
+	</div>
+	<div id="bottom-space" class="bottom-space">&nbsp;</div>
+</body>
+</html>

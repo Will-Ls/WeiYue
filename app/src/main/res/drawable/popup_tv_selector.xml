@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中时的图片背景-->
+    <item android:state_selected="true"   android:drawable="@drawable/delpop_tv_selected_bg" />
+    <item android:drawable="@drawable/delpop_tv_bg"></item>
+</selector>

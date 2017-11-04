@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="read.js"></script>
+
+    <script>
+
+        var imgNum = $('img').length;
+        $('img').load(function () {
+            if (!--imgNum) {
+                $("img").each(function (i) {
+
+                    if ($(this).attr('src') == 'image/load.jpg') {
+                        return;
+                    }
+                    //alert($(this).parent().get(0).tagName);
+                    var tagP = $(this).parent().get(0).tagName;
+                    // var toFrontImg = document.getElementsByTagName('img')[i];
+                    if (tagP != 'DIV' && tagP != 'div') {
+                        if (document.body.offsetWidth < this.width * 2) {
+                            $(this).replaceWith("<div align='middle' style='margin: 10px auto 10px; overflow: hidden;text-align: center;'><img class='" + $(this).attr('class') + "' onClick='" + $(this).attr('onClick') + "' width='100%' src='" + this.src + "'/></div>");
+                        }
+                    } else {
+                        if (document.body.offsetWidth < this.width) {
+                            $(this).width(document.body.offsetWidth - 30);
+                        }
+                    }
+                    //
+
+
+                });
+
+                //$("img:not(.zimg)").bind("click", function(e) {clickImg($(this).attr("src"));});
+                $("img").not(".zimg,.click").bind("click", function (e) {
+                    clickImg($(this).attr("src"));
+                });
+            }
+        });
+        var images = '';
+              $("img").each(function (i) {
+
+                if ($('img:last').attr('src') == $(this).attr('src')) {
+                    images += reImgName($(this).attr('src'));
+                } else {
+                    images += reImgName($(this).attr('src')) + ",";
+                }
+
+        });
+
+
+    function reImgName(imgsrc) {
+        if (imgsrc.indexOf("http://") > 0 || imgsrc.indexOf("https://") > 0) {
+            return imgsrc;
+        } else {
+            var strs = new Array();
+            strs = imgsrc.split("/");
+
+            return strs[strs.length - 2] + '/' + strs[strs.length - 1];
+        }
+    }
+    function clickImg(curimg) {
+        var arr = new Array('pause.png', 'play.png', 'zhu.png');
+        if (!Array.indexOf) {
+            Array.prototype.indexOf = function (obj) {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] == obj) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+        }
+        if (arr.indexOf(curimg) != -1) {
+            return;
+        }
+        if (dataJson.pictozip != '1') {
+
+            curimg = reImgName(curimg);
+        }
+
+
+        window.jscontrolimg.jsFunctionimg(curimg + '|' + images);
+
+    }
+    </script>
+</head>
+<body>
+<style>
+body {
+    margin: 3%;
+    color:#202020;
+    text-align: justify;
+    font-family: "Helvetica Neue", "Microsoft Yahei";
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+img{
+width:100%;
+max-width: 100%;
+}
+
+p{
+font-size:17px;
+letter-spacing:0px;
+line-height: 1.5em;
+}
+</style>
+<div id="main_content">
+
+</div>
+
+
+</body>
+
+
+</html>

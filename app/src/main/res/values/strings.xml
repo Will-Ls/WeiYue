@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">微阅</string>
+
+    <string name="loading">加载中...</string>
+
+    <!-- 状态视图  -->
+    <string name="text_empty">还没有数据呢！</string>
+    <string name="text_nonet">网络异常！</string>
+    <string name="text_retry">点击重试</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <!-- 新闻 -->
+    <string name="news_commentsize">%1$s评论</string>
+    <string name="detail_header_tv">下拉一下，看点儿不一样的</string>
+    <string name="news_toast">已为您推荐了%1$s条新资讯</string>
+    <string name="finish">完成</string>
+    <string name="edit">编辑</string>
+    <string name="willUrl">http://will-ls.top/</string>
+    <string name="githubUrl">https://github.com/Will-Ls</string>
+    <string name="email">liwanglin_001@163.com</string>
+
+    <string-array name="news_channel">
+        <item>头条</item>
+        <item>娱乐</item>
+        <item>军事</item>
+        <item>体育</item>
+        <item>财经</item>
+        <item>科技</item>
+        <item>历史</item>
+        <item>台湾</item>
+        <item>汽车</item>
+        <item>社会</item>
+        <item>FUN来了</item>
+        <item>时尚</item>
+        <item>国学</item>
+        <item>时政</item>
+        <item>凤凰大学问</item>
+        <item>文化</item>
+        <item>星座</item>
+        <item>读书</item>
+        <item>游戏</item>
+        <item>电影</item>
+        <item>国际</item>
+    </string-array>
+
+    <string-array name="news_channel_id">
+        <item>SYLB10,SYDT10</item>
+        <item>YL53,FOCUSYL53</item>
+        <item>JS83,FOCUSJS83</item>
+        <item>TY43,FOCUSTY43,TYLIVE,TYTOPIC</item>
+        <item>CJ33,FOCUSCJ33,HNCJ33</item>
+        <item>KJ123,FOCUSKJ123</item>
+        <item>LS153,FOCUSLS153</item>
+        <item>TW73</item>
+        <item>QC45,FOCUSQC45</item>
+        <item>SH133,FOCUSSH133</item>
+        <item>DZPD</item>
+        <item>SS78,FOCUSSS78</item>
+        <item>GXPD,FOCUSGXPD</item>
+        <item>SZPD,FOCUSSZPD</item>
+        <item>FHDXW,FOCUSFHDXW</item>
+        <item>WH25,FOCUSWH25</item>
+        <item>XZ09,FOCUSXZ09</item>
+        <item>DS57,FOCUSDS57</item>
+        <item>YX11,FOCUSYX11</item>
+        <item>DYPD</item>
+        <item>GJPD</item>
+    </string-array>
+</resources>
