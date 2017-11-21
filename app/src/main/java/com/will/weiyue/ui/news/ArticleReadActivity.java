@@ -172,6 +172,7 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
                 final String content = articleBean.getBody().getText();
                 String url = "javascript:show_content(\'" + content + "\')";
                 mWebView.loadUrl(url);
+                showSuccess();
             }
         });
     }

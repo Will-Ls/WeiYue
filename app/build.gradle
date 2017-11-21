@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 //apply plugin: 'me.tatarka.retrolambda'
 
 android {
@@ -72,7 +71,6 @@ dependencies {
     compile rootProject.ext.dependencies["gif-drawable"]
 
     compile rootProject.ext.dependencies["litepal"]
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }

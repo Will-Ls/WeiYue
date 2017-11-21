@@ -77,8 +77,8 @@ public class RetrofitConfig {
             Request originalRequest = chain.request();
             Request request;
             HttpUrl modifiedUrl = originalRequest.url().newBuilder()
-                    .addQueryParameter("uid", Constants.INSTANCE.getUid())
-                    .addQueryParameter("devid", Constants.INSTANCE.getUid())
+                    .addQueryParameter("uid", Constants.uid)
+                    .addQueryParameter("devid", Constants.uid)
                     .addQueryParameter("proid", "ifengnews")
                     .addQueryParameter("vt", "5")
                     .addQueryParameter("publishid", "6103")

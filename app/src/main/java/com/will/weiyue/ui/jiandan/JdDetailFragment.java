@@ -1,5 +1,6 @@
 package com.will.weiyue.ui.jiandan;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +25,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  * author: Will .
  * date: 2017/9/27 .
  */
+@SuppressLint("ValidFragment")
 public class JdDetailFragment extends BaseFragment<JanDanPresenter> implements JanDanContract.View {
     public static final String TYPE = "type";
 
@@ -35,7 +37,6 @@ public class JdDetailFragment extends BaseFragment<JanDanPresenter> implements J
     private BaseQuickAdapter mAdAapter;
     private int pageNum = 1;
     private String type;
-
 
     public JdDetailFragment(BaseQuickAdapter adapter) {
         this.mAdAapter = adapter;
