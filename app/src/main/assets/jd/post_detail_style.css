@@ -1,0 +1,139 @@
+body {
+    margin: 0px;
+    font-size: 18px;
+    line-height: 1.6em;
+    text-align: left;
+    font-family: "Helvetica Neue", "Microsoft Yahei";
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+object, embed {
+    display:none;
+}
+
+ol, ul, li, h1, h2, h3, h4, h5, h6, p, form, input {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main_content {
+    padding: 16px 16px 0px 16px;
+}
+
+#main_content p {
+    margin-bottom: 20px;
+}
+
+#main_content img {
+    border:0 none;
+    max-width: 100%;
+    width: 100%;
+}
+
+#main_content em {
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+}
+
+#main_content h4 {
+    margin-bottom: 5px;
+}
+
+#main_content a {
+    text-decoration: none;
+}
+
+#main_content blockquote {
+    margin: 10px 0;
+    padding: 20px 20px 0px;
+    border-width: 1px 0;
+    border-style: solid;
+}
+
+
+.loader {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  margin-left: 10%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  background: #3ac;
+  border-radius: 100%;
+  display: inline-block;
+  animation: slide 1s infinite;
+}
+.dot:nth-child(1) {
+  animation-delay: 0.1s;
+  background: #32aacc;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+  background: #64aacc;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.3s;
+  background: #96aacc;
+}
+.dot:nth-child(4) {
+  animation-delay: 0.4s;
+  background: #c8aacc;
+}
+.dot:nth-child(5) {
+  animation-delay: 0.5s;
+  background: #faaacc;
+}
+@-moz-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-o-keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

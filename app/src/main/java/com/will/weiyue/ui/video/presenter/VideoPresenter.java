@@ -21,11 +21,10 @@ import io.reactivex.disposables.Disposable;
  * date: 2017/9/10 .
  */
 public class VideoPresenter extends BasePresenter<VideoContract.View> implements VideoContract.Presenter {
-    private static final String TAG = "VideoPresenter";
-    NewsApi mNewsApi;
+    private NewsApi mNewsApi;
 
     @Inject
-    public VideoPresenter(NewsApi newsApi) {
+    VideoPresenter(NewsApi newsApi) {
         this.mNewsApi = newsApi;
     }
 
@@ -59,8 +58,8 @@ public class VideoPresenter extends BasePresenter<VideoContract.View> implements
     }
 
     @Override
-    public void getVideoDetails(final int page, String listtype, String typeid) {
-        mNewsApi.getVideoDetail(page,listtype,typeid)
+    public void getVideoDetails(final int page, String listType, String typeId) {
+        mNewsApi.getVideoDetail(page, listType, typeId)
                 .compose(RxSchedulers.<List<VideoDetailBean>>applySchedulers())
                 .compose(mView.<List<VideoDetailBean>>bindToLife())
                 .subscribe(new Observer<List<VideoDetailBean>>() {
@@ -71,16 +70,16 @@ public class VideoPresenter extends BasePresenter<VideoContract.View> implements
 
                     @Override
                     public void onNext(@NonNull List<VideoDetailBean> videoDetailBean) {
-                        if (page>1){
+                        if (page > 1) {
                             mView.loadMoreVideoDetails(videoDetailBean);
-                        }else {
+                        } else {
                             mView.loadVideoDetails(videoDetailBean);
                         }
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                       // Log.i(TAG, "onError: "+e.getMessage().toString());
+                        // Log.i(TAG, "onError: "+e.getMessage().toString());
                     }
 
                     @Override

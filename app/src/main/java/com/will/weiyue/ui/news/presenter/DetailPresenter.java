@@ -58,8 +58,7 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
                         while (iterator.hasNext()) {
                             try {
                                 NewsDetail.ItemBean bean = iterator.next();
-                                if (bean.getType().equals(NewsUtils.TYPE_DOC)) {
-                                    if (bean.getStyle().getView() != null) {
+                                if (bean.getType().equals(NewsUtils.TYPE_DOC)) {if (bean.getStyle().getView() != null) {
                                         if (bean.getStyle().getView().equals(NewsUtils.VIEW_TITLEIMG)) {
                                             bean.itemType = NewsDetail.ItemBean.TYPE_DOC_TITLEIMG;
                                         } else {

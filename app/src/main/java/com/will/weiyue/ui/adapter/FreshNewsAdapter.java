@@ -2,7 +2,6 @@ package com.will.weiyue.ui.adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -10,7 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.FreshNewsBean;
-import com.will.weiyue.ui.jiandan.ReadActivity;
+import com.will.weiyue.ui.jandan.ReadActivity;
 import com.will.weiyue.utils.ImageLoaderUtil;
 
 import java.util.List;

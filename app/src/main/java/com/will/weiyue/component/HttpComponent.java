@@ -1,6 +1,6 @@
 package com.will.weiyue.component;
 
-import com.will.weiyue.ui.jiandan.JdDetailFragment;
+import com.will.weiyue.ui.jandan.JdDetailFragment;
 import com.will.weiyue.ui.video.DetailFragment;
 import com.will.weiyue.ui.video.VideoFragment;
 

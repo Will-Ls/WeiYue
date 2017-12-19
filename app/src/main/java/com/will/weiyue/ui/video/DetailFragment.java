@@ -32,7 +32,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  */
 public class DetailFragment extends BaseFragment<VideoPresenter> implements VideoContract.View {
 
-    public static final String TYPEID ="typeid";
+    public static final String TYPEID = "typeId";
 
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;
@@ -41,11 +41,11 @@ public class DetailFragment extends BaseFragment<VideoPresenter> implements Vide
     private VideoDetailBean videoDetailBean;
     private VideoDetailAdapter detailAdapter;
     private int pageNum = 1;
-    private String typeid ;
+    private String typeId;
 
-    public static DetailFragment newInstance(String typeid) {
+    public static DetailFragment newInstance(String typeId) {
         Bundle args = new Bundle();
-        args.putCharSequence(TYPEID,typeid);
+        args.putCharSequence(TYPEID, typeId);
         DetailFragment fragment = new DetailFragment();
         fragment.setArguments(args);
         return fragment;
@@ -75,30 +75,34 @@ public class DetailFragment extends BaseFragment<VideoPresenter> implements Vide
 
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                pageNum=1;
-                mPresenter.getVideoDetails(pageNum,"list",typeid);
+                pageNum = 1;
+                if (mPresenter != null) {
+                    mPresenter.getVideoDetails(pageNum, "list", typeId);
+                }
             }
         });
         videoDetailBean = new VideoDetailBean();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setAdapter(detailAdapter = new VideoDetailAdapter(getActivity(),R.layout.item_detail_video,videoDetailBean.getItem()));
+        mRecyclerView.setAdapter(detailAdapter = new VideoDetailAdapter(getActivity(), R.layout.item_detail_video, videoDetailBean.getItem()));
         detailAdapter.setEnableLoadMore(true);
         detailAdapter.setLoadMoreView(new CustomLoadMoreView());
         detailAdapter.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
         detailAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
             @Override
             public void onLoadMoreRequested() {
-                mPresenter.getVideoDetails(pageNum,"list",typeid);
+                mPresenter.getVideoDetails(pageNum, "list", typeId);
             }
         }, mRecyclerView);
 
-     }
+    }
 
     @Override
     public void initData() {
         if (getArguments() == null) return;
-        typeid = getArguments().getString(TYPEID);
-        mPresenter.getVideoDetails(pageNum,"list",typeid);
+        typeId = getArguments().getString(TYPEID);
+        if (mPresenter != null) {
+            mPresenter.getVideoDetails(pageNum, "list", typeId);
+        }
     }
 
     @Override
@@ -108,7 +112,7 @@ public class DetailFragment extends BaseFragment<VideoPresenter> implements Vide
 
     @Override
     public void loadVideoDetails(List<VideoDetailBean> detailBean) {
-        if (detailBean==null) {
+        if (detailBean == null) {
             showFaild();
             return;
         }
@@ -120,7 +124,7 @@ public class DetailFragment extends BaseFragment<VideoPresenter> implements Vide
 
     @Override
     public void loadMoreVideoDetails(List<VideoDetailBean> detailBean) {
-        if (detailBean==null) {
+        if (detailBean == null) {
             detailAdapter.loadMoreEnd();
             return;
         }

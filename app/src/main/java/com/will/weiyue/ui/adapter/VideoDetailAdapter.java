@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -19,6 +18,7 @@ import java.text.NumberFormat;
 import java.util.List;
 
 import fm.jiecao.jcvideoplayer_lib.JCUserAction;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
@@ -40,13 +40,11 @@ public class VideoDetailAdapter extends BaseQuickAdapter<VideoDetailBean.ItemBea
         JCVideoPlayerStandard jcVideoPlayerStandard = viewHolder.getView(R.id.videoplayer);
         jcVideoPlayerStandard.setUp(itemBean.getVideo_url()
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, itemBean.getTitle());
-        jcVideoPlayerStandard.setJcUserAction(new JCUserAction() {
+        JCVideoPlayer.setJcUserAction(new JCUserAction() {
             @Override
             public void onEvent(int type, String s, int i1, Object... objects) {
-                Log.i("VideoDetailAdapter", "onEvent: " + type);
                 switch (type) {
                     case JCUserAction.ON_CLICK_START_ICON:
-                        Log.i("VideoDetailAdapter", "onEvent: " + "开始了");
                         viewHolder.getView(R.id.tv_videoduration).setVisibility(View.GONE);
                         break;
                 }

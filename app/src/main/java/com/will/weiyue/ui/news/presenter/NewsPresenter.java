@@ -53,6 +53,7 @@ public class NewsPresenter extends BasePresenter<NewsContract.View> implements N
                 } else {
                     otherChannels.add(channel);
                 }
+                channels.add(channel);
             }
 
             DataSupport.saveAllAsync(channels).listen(new SaveCallback() {

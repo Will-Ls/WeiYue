@@ -161,7 +161,7 @@ public class NewAdapter extends BaseMultiItemQuickAdapter<Channel, BaseViewHolde
                             }
                         } else {
                             if (onChannelListener != null) {
-                                onChannelListener.onfinish(channel.getChannelName());
+                                onChannelListener.onFinish(channel.getChannelName());
                             }
                         }
                     }

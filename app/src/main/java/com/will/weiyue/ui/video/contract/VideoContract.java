@@ -33,9 +33,9 @@ public interface VideoContract {
          * 获取视频列表
          *
          * @param page     页码
-         * @param listtype 默认list
-         * @param typeid   频道id
+         * @param listType 默认list
+         * @param typeId   频道id
          */
-        void getVideoDetails(int page, String listtype, String typeid);
+        void getVideoDetails(int page, String listType, String typeId);
     }
 }

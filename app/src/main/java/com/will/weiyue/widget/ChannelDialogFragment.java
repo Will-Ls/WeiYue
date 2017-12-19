@@ -49,10 +49,10 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelLi
 
     }
 
-    private OnChannelListener mOnChannelListener;
+    private OnChannelListener onChannelListener;
 
     public void setOnChannelListener(OnChannelListener onChannelListener) {
-        mOnChannelListener = onChannelListener;
+        this.onChannelListener = onChannelListener;
     }
 
     @Nullable
@@ -147,8 +147,8 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelLi
         if (starPos < 0 || endPos < 0) return;
         if (mDatas.get(endPos).getChannelName().equals("头条")) return;
         //我的频道之间移动
-        if (mOnChannelListener != null)
-            mOnChannelListener.onItemMove(starPos - 1, endPos - 1);//去除标题所占的一个index
+        if (onChannelListener != null)
+            onChannelListener.onItemMove(starPos - 1, endPos - 1);//去除标题所占的一个index
         onMove(starPos, endPos, false);
     }
 
@@ -185,7 +185,7 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelLi
     }
 
     @Override
-    public void onfinish(String selectedChannelName) {
+    public void onFinish(String selectedChannelName) {
         EventBus.getDefault().post(new SelectChannelEvent(selectedChannelName));
         dismiss();
     }
@@ -198,17 +198,9 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelLi
         super.onPause();
     }
 
-    private DialogInterface.OnDismissListener mOnDismissListener;
-
-    public void setOnDismissListener(DialogInterface.OnDismissListener onDismissListener) {
-        mOnDismissListener = onDismissListener;
-    }
-
     @Override
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
-        if (mOnDismissListener != null)
-            mOnDismissListener.onDismiss(dialog);
     }
 
     @Override

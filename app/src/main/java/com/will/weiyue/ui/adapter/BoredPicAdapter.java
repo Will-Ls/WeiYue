@@ -17,7 +17,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.will.weiyue.MyApp;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.JdDetailBean;
-import com.will.weiyue.ui.jiandan.ImageBrowseActivity;
+import com.will.weiyue.ui.jandan.ImageBrowseActivity;
 import com.will.weiyue.utils.ContextUtils;
 import com.will.weiyue.utils.DateUtil;
 import com.will.weiyue.utils.ImageLoaderUtil;

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import com.will.weiyue.component.ApplicationComponent;
 import com.will.weiyue.ui.base.BaseActivity;
 import com.will.weiyue.ui.base.SupportFragment;
-import com.will.weiyue.ui.jiandan.JianDanFragment;
+import com.will.weiyue.ui.jandan.JanDanFragment;
 import com.will.weiyue.ui.personal.PersonalFragment;
 import com.will.weiyue.ui.news.NewsFragment;
 import com.will.weiyue.ui.video.VideoFragment;
@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity {
         if (savedInstanceState == null) {
             mFragments[0] = NewsFragment.newInstance();
             mFragments[1] = VideoFragment.newInstance();
-            mFragments[2] = JianDanFragment.newInstance();
+            mFragments[2] = JanDanFragment.newInstance();
             mFragments[3] = PersonalFragment.newInstance();
 
             getSupportDelegate().loadMultipleRootFragment(R.id.contentContainer, 0,
@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
         } else {
             mFragments[0] = findFragment(NewsFragment.class);
             mFragments[1] = findFragment(VideoFragment.class);
-            mFragments[2] = findFragment(JianDanFragment.class);
+            mFragments[2] = findFragment(JanDanFragment.class);
             mFragments[3] = findFragment(PersonalFragment.class);
         }
 

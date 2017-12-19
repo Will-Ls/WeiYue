@@ -56,7 +56,7 @@ public class NewsDelPop extends BasePopup<NewsDelPop> {
         super(context);
     }
 
-    public NewsDelPop setBackreason(List<String> backreason, boolean isTop,int position) {
+    public NewsDelPop setBackReason(List<String> backreason, boolean isTop,int position) {
         this.backreason = backreason;
         this.position =position;
         selectid = new ArrayList<>();

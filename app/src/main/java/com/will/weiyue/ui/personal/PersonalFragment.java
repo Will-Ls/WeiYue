@@ -68,9 +68,9 @@ public class PersonalFragment extends BaseFragment {
     public void bindView(View view, Bundle savedInstanceState) {
         ImageLoaderUtil.LoadImage(this, "http://oon8y1sqh.bkt.clouddn.com/avatar.JPG", mIvAuthor,
                 new RequestOptions().circleCrop().diskCacheStrategy(DiskCacheStrategy.ALL));
-        Typeface mtypeface = Typeface.createFromAsset(getActivity().getAssets(), "consolab.ttf");
+        Typeface mtypeface = Typeface.createFromAsset(getActivity().getAssets(), "font/consolab.ttf");
         mTvContacts.setTypeface(mtypeface);
-        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "consola.ttf");
+        Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "font/consola.ttf");
         mTvName.setTypeface(typeface);
         mTvBlog.setTypeface(typeface);
         mTvGithub.setTypeface(typeface);

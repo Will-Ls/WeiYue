@@ -81,7 +81,7 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
         setWebViewSetting();
-        setStatusBarColor(Color.parseColor("#BDBDBD"),30);
+        setStatusBarColor(Color.parseColor("#BDBDBD"), 30);
         mScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
 
             @Override
@@ -127,7 +127,6 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
 
     @Override
     public void initData() {
-
     }
 
     @Override
@@ -139,10 +138,7 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
     @Override
     public void loadData(final NewsArticleBean articleBean) {
         mTvTitle.setText(articleBean.getBody().getTitle());
-        mTvTopName.setText(articleBean.getBody().getSource());
-        mTvName.setText(articleBean.getBody().getSource());
         mTvUpdateTime.setText(DateUtil.getTimestampString(DateUtil.string2Date(articleBean.getBody().getUpdateTime(), "yyyy/MM/dd HH:mm:ss")));
-        mTvTopUpdateTime.setText(articleBean.getBody().getAuthor());
         if (articleBean.getBody().getSubscribe() != null) {
             Glide.with(this).load(articleBean.getBody().getSubscribe().getLogo())
                     .apply(new RequestOptions()
@@ -158,13 +154,11 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
                     .into(mIvTopLogo);
             mTvTopName.setText(articleBean.getBody().getSubscribe().getCateSource());
             mTvName.setText(articleBean.getBody().getSubscribe().getCateSource());
-            mTvUpdateTime.setText(DateUtil.getTimestampString(DateUtil.string2Date(articleBean.getBody().getUpdateTime(), "yyyy/MM/dd HH:mm:ss")));
             mTvTopUpdateTime.setText(articleBean.getBody().getSubscribe().getCatename());
-        }else {
+        } else {
             mTvTopName.setText(articleBean.getBody().getSource());
             mTvName.setText(articleBean.getBody().getSource());
-            mTvUpdateTime.setText(DateUtil.getTimestampString(DateUtil.string2Date(articleBean.getBody().getUpdateTime(), "yyyy/MM/dd HH:mm:ss")));
-            mTvTopUpdateTime.setText(!TextUtils.isEmpty(articleBean.getBody().getAuthor())?articleBean.getBody().getAuthor():articleBean.getBody().getEditorcode());
+            mTvTopUpdateTime.setText(!TextUtils.isEmpty(articleBean.getBody().getAuthor()) ? articleBean.getBody().getAuthor() : articleBean.getBody().getEditorcode());
         }
         mWebView.post(new Runnable() {
             @Override

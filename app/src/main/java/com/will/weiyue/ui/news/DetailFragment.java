@@ -155,13 +155,13 @@ public class  DetailFragment extends BaseFragment<DetailPresenter> implements De
                             newsDelPop
                                     .anchorView(view)
                                     .gravity(Gravity.TOP)
-                                    .setBackreason(itemBean.getStyle().getBackreason(), true, i)
+                                    .setBackReason(itemBean.getStyle().getBackreason(), true, i)
                                     .show();
                         } else {
                             newsDelPop
                                     .anchorView(view)
                                     .gravity(Gravity.BOTTOM)
-                                    .setBackreason(itemBean.getStyle().getBackreason(), false, i)
+                                    .setBackReason(itemBean.getStyle().getBackreason(), false, i)
                                     .show();
                         }
                         break;

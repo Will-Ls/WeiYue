@@ -115,22 +115,22 @@ public class ImageBrowseActivity extends BaseActivity<ArticleReadPresenter> impl
                 df.setMaximumFractionDigits(1);
                 df.setRoundingMode(RoundingMode.HALF_UP);
                 String dd = df.format(fractionAnchor);
-                double alpah = 1 - (Float.valueOf(dd) + 0.8);
+                double alpha = 1 - (Float.valueOf(dd) + 0.8);
                 if (fractionAnchor == 0 && isShow) {
                     mScrollview.setAlpha(1f);
                     mRlTop.setAlpha(1f);
                     mRlTop.setVisibility(View.VISIBLE);
                     mScrollview.setVisibility(View.VISIBLE);
                 } else {
-                    if (alpah == 0) {
+                    if (alpha == 0) {
                         mRlTop.setVisibility(View.GONE);
                         mScrollview.setVisibility(View.GONE);
                         mScrollview.setAlpha(1f);
                         mRlTop.setAlpha(1f);
                     } else {
                         if (mRlTop.getVisibility() != View.GONE) {
-                            mRlTop.setAlpha((float) alpah);
-                            mScrollview.setAlpha((float) alpah);
+                            mRlTop.setAlpha((float) alpha);
+                            mScrollview.setAlpha((float) alpha);
                         }
                     }
                 }

@@ -52,6 +52,7 @@
         <activity
             android:name=".ui.news.ArticleReadActivity"
             android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
@@ -68,19 +69,21 @@
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
         <activity
-            android:name=".ui.jiandan.ReadActivity"
+            android:name=".ui.jandan.ReadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:hardwareAccelerated="true"
+
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+        <activity
+            android:name=".ui.jandan.ImageBrowseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden">
         </activity>
         <activity
-            android:name=".ui.jiandan.ImageBrowseActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden">
-        </activity>
-        <activity
-            android:name=".WeclomeActivity"
+            android:name=".WelcomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar"
             android:windowSoftInputMode="stateAlwaysHidden">

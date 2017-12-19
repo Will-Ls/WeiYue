@@ -117,5 +117,6 @@ public class SupportActivity extends RxAppCompatActivity implements ISupportActi
      */
     public <T extends ISupportFragment> T findFragment(Class<T> fragmentClass) {
         return SupportHelper.findFragment(getSupportFragmentManager(), fragmentClass);
+
     }
 }

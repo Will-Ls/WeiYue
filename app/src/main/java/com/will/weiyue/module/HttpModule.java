@@ -52,12 +52,12 @@ public class HttpModule {
     NewsApi provideNetEaseApis(OkHttpClient.Builder builder) {
         builder.addInterceptor(RetrofitConfig.sQueryParameterInterceptor);
 
-        Retrofit.Builder rerofitBuilder = new Retrofit.Builder()
+        Retrofit.Builder retrofitBuilder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(builder.build());
 
-        return NewsApi.getInstance(rerofitBuilder
+        return NewsApi.getInstance(retrofitBuilder
                 .baseUrl(ApiConstants.sIFengApi)
                 .build().create(NewsApiService.class));
     }
@@ -65,12 +65,12 @@ public class HttpModule {
     @Provides
     JanDanApi provideJanDanApis(OkHttpClient.Builder builder) {
 
-        Retrofit.Builder rerofitBuilder = new Retrofit.Builder()
+        Retrofit.Builder retrofitBuilder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(builder.build());
 
-        return JanDanApi.getInstance(rerofitBuilder
+        return JanDanApi.getInstance(retrofitBuilder
                 .baseUrl(ApiConstants.sJanDanApi)
                 .build().create(JanDanApiService.class));
     }
