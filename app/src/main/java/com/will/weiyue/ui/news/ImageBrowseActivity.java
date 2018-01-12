@@ -26,7 +26,7 @@ import com.will.weiyue.R;
 import com.will.weiyue.bean.NewsArticleBean;
 import com.will.weiyue.bean.NewsDetail;
 import com.will.weiyue.component.ApplicationComponent;
-import com.will.weiyue.component.DaggerArticleReadComponent;
+import com.will.weiyue.component.DaggerHttpComponent;
 import com.will.weiyue.net.ApiConstants;
 import com.will.weiyue.ui.base.BaseActivity;
 import com.will.weiyue.ui.news.contract.ArticleReadContract;
@@ -95,7 +95,7 @@ public class ImageBrowseActivity extends BaseActivity<ArticleReadPresenter> impl
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-        DaggerArticleReadComponent.builder()
+        DaggerHttpComponent.builder()
                 .applicationComponent(appComponent)
                 .build()
                 .inject(this);

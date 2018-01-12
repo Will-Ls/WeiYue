@@ -3,7 +3,6 @@ package com.will.weiyue.ui.news;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.widget.NestedScrollView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,11 +21,12 @@ import com.bumptech.glide.request.RequestOptions;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.NewsArticleBean;
 import com.will.weiyue.component.ApplicationComponent;
-import com.will.weiyue.component.DaggerArticleReadComponent;
+import com.will.weiyue.component.DaggerHttpComponent;
 import com.will.weiyue.ui.base.BaseActivity;
 import com.will.weiyue.ui.news.contract.ArticleReadContract;
 import com.will.weiyue.ui.news.presenter.ArticleReadPresenter;
 import com.will.weiyue.utils.DateUtil;
+import com.will.weiyue.widget.ObservableScrollView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -53,7 +53,7 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
     @BindView(R.id.iv_back)
     ImageView mIvBack;
     @BindView(R.id.ScrollView)
-    NestedScrollView mScrollView;
+    ObservableScrollView mScrollView;
     @BindView(R.id.ConstraintLayout)
     RelativeLayout mConstraintLayout;
     @BindView(R.id.rl_top)
@@ -72,7 +72,7 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-        DaggerArticleReadComponent.builder()
+        DaggerHttpComponent.builder()
                 .applicationComponent(appComponent)
                 .build()
                 .inject(this);
@@ -82,10 +82,10 @@ public class ArticleReadActivity extends BaseActivity<ArticleReadPresenter> impl
     public void bindView(View view, Bundle savedInstanceState) {
         setWebViewSetting();
         setStatusBarColor(Color.parseColor("#BDBDBD"), 30);
-        mScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
 
+        mScrollView.setScrollViewListener(new ObservableScrollView.ScrollViewListener() {
             @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+            public void onScrollChanged(ObservableScrollView scrollView, int x, int scrollY, int oldx, int oldy) {
                 if (scrollY > mConstraintLayout.getHeight()) {
                     mRlTop.setVisibility(View.VISIBLE);
                 } else {

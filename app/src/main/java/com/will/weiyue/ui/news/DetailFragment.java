@@ -24,7 +24,7 @@ import com.will.weiyue.MyApp;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.NewsDetail;
 import com.will.weiyue.component.ApplicationComponent;
-import com.will.weiyue.component.DaggerDetailComponent;
+import com.will.weiyue.component.DaggerHttpComponent;
 import com.will.weiyue.net.NewsApi;
 import com.will.weiyue.net.NewsUtils;
 import com.will.weiyue.ui.adapter.NewsDetailAdapter;
@@ -93,7 +93,7 @@ public class  DetailFragment extends BaseFragment<DetailPresenter> implements De
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-        DaggerDetailComponent.builder()
+        DaggerHttpComponent.builder()
                 .applicationComponent(appComponent)
                 .build()
                 .inject(this);

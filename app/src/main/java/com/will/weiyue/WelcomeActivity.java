@@ -64,6 +64,7 @@ public class WelcomeActivity extends BaseActivity {
             }
         }, 100);
 
+        //必应每日壁纸 来源于 https://www.dujin.org/fenxiang/jiaocheng/3618.html.
         ImageLoaderUtil.LoadImage(this, "http://api.dujin.org/bing/1920.php", ivAd);
 
         mCompositeDisposable.add(countDown(3).doOnSubscribe(new Consumer<Disposable>() {

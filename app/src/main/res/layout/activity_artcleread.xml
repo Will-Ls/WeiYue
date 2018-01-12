@@ -82,7 +82,7 @@
             />
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <com.will.weiyue.widget.ObservableScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ScrollView"
@@ -188,5 +188,5 @@
             </LinearLayout>
 
         </com.will.weiyue.widget.SimpleMultiStateView>
-    </android.support.v4.widget.NestedScrollView>
+    </com.will.weiyue.widget.ObservableScrollView>
 </LinearLayout>

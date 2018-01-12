@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.Channel;
 import com.will.weiyue.component.ApplicationComponent;
-import com.will.weiyue.component.DaggerNewsComponent;
+import com.will.weiyue.component.DaggerHttpComponent;
 import com.will.weiyue.database.ChannelDao;
 import com.will.weiyue.event.NewChannelEvent;
 import com.will.weiyue.event.SelectChannelEvent;
@@ -67,7 +67,7 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsCon
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-        DaggerNewsComponent.builder()
+        DaggerHttpComponent.builder()
                 .applicationComponent(appComponent)
                 .build()
                 .inject(this);
