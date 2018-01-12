@@ -7,9 +7,11 @@
 
 
 ## 截图
-<img src="screenshots/news.gif" width="330" hspace="20" />
 
-<img src="screenshots/jd.gif" width="330"  hspace="20">
+![](http://oon8y1sqh.bkt.clouddn.com/news.gif)
+
+![](http://oon8y1sqh.bkt.clouddn.com/jd.gif)
+
 
 
 ## 声明
