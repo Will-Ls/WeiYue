@@ -44,7 +44,7 @@ public class JanDanPresenter extends BasePresenter<JanDanContract.View> implemen
                 .compose(mView.<FreshNewsBean>bindToLife())
                 .subscribe(new BaseObserver<FreshNewsBean>() {
                     @Override
-                    public void onSucess(FreshNewsBean freshNewsBean) {
+                    public void onSuccess(FreshNewsBean freshNewsBean) {
                         if (page > 1) {
                             mView.loadMoreFreshNews(freshNewsBean);
                         } else {
@@ -82,7 +82,7 @@ public class JanDanPresenter extends BasePresenter<JanDanContract.View> implemen
                 })
                 .subscribe(new BaseObserver<JdDetailBean>() {
                     @Override
-                    public void onSucess(JdDetailBean jdDetailBean) {
+                    public void onSuccess(JdDetailBean jdDetailBean) {
                         if (page > 1) {
                             mView.loadMoreDetailData(type, jdDetailBean);
                         } else {

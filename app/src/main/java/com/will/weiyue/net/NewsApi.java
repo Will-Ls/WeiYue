@@ -12,9 +12,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Function;
 
 
 /**
@@ -59,14 +56,8 @@ public class NewsApi {
      * @param pullNum 操作次数 累加
      * @return
      */
-    public Observable<NewsDetail> getNewsDetail(String id, @Actions String action, int pullNum) {
-        return mService.getNewsDetail(id, action, pullNum)
-                .flatMap(new Function<List<NewsDetail>, ObservableSource<NewsDetail>>() {
-                    @Override
-                    public ObservableSource<NewsDetail> apply(@NonNull List<NewsDetail> newsDetails) throws Exception {
-                        return Observable.fromIterable(newsDetails);
-                    }
-                });
+    public Observable<List<NewsDetail>> getNewsDetail(String id, @Actions String action, int pullNum) {
+        return mService.getNewsDetail(id, action, pullNum);
     }
 
     /**

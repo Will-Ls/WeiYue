@@ -133,7 +133,7 @@ public class ReadActivity extends BaseActivity {
                 .compose(this.<FreshNewsArticleBean>bindToLifecycle())
                 .subscribe(new BaseObserver<FreshNewsArticleBean>() {
                     @Override
-                    public void onSucess(final FreshNewsArticleBean articleBean) {
+                    public void onSuccess(final FreshNewsArticleBean articleBean) {
                         if (articleBean == null) {
                             showFaild();
                         } else {

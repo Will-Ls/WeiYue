@@ -17,7 +17,6 @@ import javax.inject.Inject;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
-import io.reactivex.functions.Predicate;
 
 
 /**
@@ -38,17 +37,19 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
     @Override
     public void getData(final String id, final String action, int pullNum) {
         mNewsApi.getNewsDetail(id, action, pullNum)
-                .compose(RxSchedulers.<NewsDetail>applySchedulers())
-                .filter(new Predicate<NewsDetail>() {
+                .compose(RxSchedulers.<List<NewsDetail>>applySchedulers())
+                .map(new Function<List<NewsDetail>, NewsDetail>() {
                     @Override
-                    public boolean test(@NonNull NewsDetail newsDetail) throws Exception {
-                        if (NewsUtils.isBannerNews(newsDetail)) {
-                            mView.loadBannerData(newsDetail);
+                    public NewsDetail apply(List<NewsDetail> newsDetails) throws Exception {
+                        for (NewsDetail newsDetail : newsDetails) {
+                            if (NewsUtils.isBannerNews(newsDetail)) {
+                                mView.loadBannerData(newsDetail);
+                            }
+                            if (NewsUtils.isTopNews(newsDetail)) {
+                                mView.loadTopNewsData(newsDetail);
+                            }
                         }
-                        if (NewsUtils.isTopNews(newsDetail)) {
-                            mView.loadTopNewsData(newsDetail);
-                        }
-                        return NewsUtils.isListNews(newsDetail);
+                        return newsDetails.get(0);
                     }
                 })
                 .map(new Function<NewsDetail, List<NewsDetail.ItemBean>>() {
@@ -58,7 +59,8 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
                         while (iterator.hasNext()) {
                             try {
                                 NewsDetail.ItemBean bean = iterator.next();
-                                if (bean.getType().equals(NewsUtils.TYPE_DOC)) {if (bean.getStyle().getView() != null) {
+                                if (bean.getType().equals(NewsUtils.TYPE_DOC)) {
+                                    if (bean.getStyle().getView() != null) {
                                         if (bean.getStyle().getView().equals(NewsUtils.VIEW_TITLEIMG)) {
                                             bean.itemType = NewsDetail.ItemBean.TYPE_DOC_TITLEIMG;
                                         } else {
@@ -79,13 +81,13 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
                                         iterator.remove();
                                     }
                                 } else if (bean.getType().equals(NewsUtils.TYPE_SLIDE)) {
-                                    if (bean.getLink().getType().equals("doc")){
+                                    if (bean.getLink().getType().equals("doc")) {
                                         if (bean.getStyle().getView().equals(NewsUtils.VIEW_SLIDEIMG)) {
                                             bean.itemType = NewsDetail.ItemBean.TYPE_DOC_SLIDEIMG;
                                         } else {
                                             bean.itemType = NewsDetail.ItemBean.TYPE_DOC_TITLEIMG;
                                         }
-                                    }else {
+                                    } else {
                                         bean.itemType = NewsDetail.ItemBean.TYPE_SLIDE;
                                     }
                                 } else if (bean.getType().equals(NewsUtils.TYPE_PHVIDEO)) {
@@ -105,7 +107,7 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
                 .compose(mView.<List<NewsDetail.ItemBean>>bindToLife())
                 .subscribe(new BaseObserver<List<NewsDetail.ItemBean>>() {
                     @Override
-                    public void onSucess(List<NewsDetail.ItemBean> itemBeen) {
+                    public void onSuccess(List<NewsDetail.ItemBean> itemBeen) {
                         if (!action.equals(NewsApi.ACTION_UP)) {
                             mView.loadData(itemBeen);
                         } else {

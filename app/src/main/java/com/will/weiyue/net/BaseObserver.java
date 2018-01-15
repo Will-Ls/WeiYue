@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable;
  */
 public abstract class BaseObserver<T> implements Observer<T> {
 
-    public abstract void onSucess(T t);
+    public abstract void onSuccess(T t);
 
     public abstract void onFail(Throwable e);
 
@@ -22,7 +22,7 @@ public abstract class BaseObserver<T> implements Observer<T> {
 
     @Override
     public void onNext(@NonNull T t) {
-        onSucess(t);
+        onSuccess(t);
     }
 
     @Override

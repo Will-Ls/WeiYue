@@ -83,8 +83,8 @@ public class RetrofitConfig {
                     .addQueryParameter("vt", "5")
                     .addQueryParameter("publishid", "6103")
                     .addQueryParameter("screen", "1080x1920")
-                    .addQueryParameter("os", "androidphone")
-                    .addQueryParameter("df", "android_22")
+                    .addQueryParameter("df", "androidphone")
+                    .addQueryParameter("os", "android_22")
                     .addQueryParameter("nw", "wifi")
                     .build();
             request = originalRequest.newBuilder().url(modifiedUrl).build();
