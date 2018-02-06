@@ -3,7 +3,7 @@
 微阅是一款使用 MVP + Retrofit2 + Rxjava + dagger2 等框架开发的阅读软件。包括新闻、视频、煎蛋三个模块，项目的大部分功能已经完成。
 另有 [kotlin版本](https://github.com/Will-Ls/WeiYueKotlin) 
 
-[下载apk](http://fir.im/5jhv)
+[下载apk](https://fir.im/5mt6)
 
 
 ## 截图
