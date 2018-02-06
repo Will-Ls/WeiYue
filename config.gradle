@@ -51,7 +51,7 @@ ext {
             "butterknife-compiler"  : "com.jakewharton:butterknife-compiler:8.8.1",
             "ultra-ptr"             : "in.srain.cube:ultra-ptr:1.0.11",
             "bottom-bar"            : "com.roughike:bottom-bar:2.3.1",
-            "BaseAdapterHelper"     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.24",
+            "BaseAdapterHelper"     : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35",
             "glide"                 : "com.github.bumptech.glide:glide:4.0.0-RC1",
             "banner"                : "com.youth.banner:banner:1.4.9",
             "viewanimator"          : "com.github.florent37:viewanimator:1.0.5",

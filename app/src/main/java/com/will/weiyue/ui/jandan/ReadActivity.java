@@ -55,7 +55,7 @@ public class ReadActivity extends BaseActivity {
     ImageView mIvComment;
 
 
-    public static void launch(Context context, FreshNewsBean.PostsBean postsBean, View view) {
+    public static void launch(Context context, FreshNewsBean.PostsBean postsBean) {
         Intent intent = new Intent(context, ReadActivity.class);
         intent.putExtra(DATA, postsBean);
         context.startActivity(intent);

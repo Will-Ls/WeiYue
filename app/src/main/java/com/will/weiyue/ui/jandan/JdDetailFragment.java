@@ -12,6 +12,7 @@ import com.will.weiyue.bean.FreshNewsBean;
 import com.will.weiyue.bean.JdDetailBean;
 import com.will.weiyue.component.ApplicationComponent;
 import com.will.weiyue.component.DaggerHttpComponent;
+import com.will.weiyue.net.JanDanApi;
 import com.will.weiyue.ui.base.BaseFragment;
 import com.will.weiyue.widget.CustomLoadMoreView;
 
@@ -92,7 +93,14 @@ public class JdDetailFragment extends BaseFragment<JanDanPresenter> implements J
                 mPresenter.getData(type, pageNum);
             }
         }, mRecyclerView);
-
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                if (type.equals(JanDanApi.TYPE_FRESH)){
+                    ReadActivity.launch(getActivity(), (FreshNewsBean.PostsBean) adapter.getItem(position));
+                }
+            }
+        });
     }
 
     @Override

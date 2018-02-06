@@ -9,7 +9,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.will.weiyue.R;
 import com.will.weiyue.bean.FreshNewsBean;
-import com.will.weiyue.ui.jandan.ReadActivity;
 import com.will.weiyue.utils.ImageLoaderUtil;
 
 import java.util.List;
@@ -33,12 +32,12 @@ public class FreshNewsAdapter extends BaseQuickAdapter<FreshNewsBean.PostsBean, 
         viewHolder.setText(R.id.tv_info, postsBean.getAuthor().getName());
         viewHolder.setText(R.id.tv_commnetsize, postsBean.getComment_count() + "评论");
         ImageLoaderUtil.LoadImage(mContext, postsBean.getCustom_fields().getThumb_c().get(0), (ImageView) viewHolder.getView(R.id.iv_logo));
-        setOnItemClickListener(this);
+       // setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        View view1 = baseQuickAdapter.getViewByPosition(i,R.id.iv_logo);
-        ReadActivity.launch(mContext, (FreshNewsBean.PostsBean) baseQuickAdapter.getItem(i),view1);
+//        View view1 = baseQuickAdapter.getViewByPosition(i,R.id.iv_logo);
+//        ReadActivity.launch(mContext, (FreshNewsBean.PostsBean) baseQuickAdapter.getItem(i));
     }
 }
