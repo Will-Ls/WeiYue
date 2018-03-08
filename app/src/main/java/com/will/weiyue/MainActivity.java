@@ -19,7 +19,7 @@ import butterknife.BindView;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 public class MainActivity extends BaseActivity {
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "MainActivity";  
 
     @BindView(R.id.contentContainer)
     FrameLayout mContentContainer;
